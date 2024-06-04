@@ -1,12 +1,11 @@
 fun main() {
-    val (numberOfOranges, maximumSize, wasteThreshold) = readln().split(" ").map(String::toInt)
-    val listOfOranges = readln().split(" ").map(String::toInt)
+    val (numberOfOranges, maxOrangeSize, wasteThreshold) = readln().split(" ").map(String::toInt)
+    val listOfOrangeSizes = readln().split(" ").map(String::toInt)
 
-    var numberOfCleanings = 0
-    var currentWaste = 0
-    for (orange in listOfOranges) {
-        if (orange <= maximumSize) {
-            currentWaste += orange
+    var numberOfCleanings = 0; var currentWaste = 0
+    for (orangeSize in listOfOrangeSizes) {
+        if (orangeSize <= maxOrangeSize) {
+            currentWaste += orangeSize
             if (currentWaste > wasteThreshold) {
                 currentWaste = 0
                 numberOfCleanings += 1
